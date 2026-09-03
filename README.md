@@ -27,6 +27,10 @@ This project analyzes employee attrition and identifies the major factors contri
 • Attrition by Work-Life Balance
 • Attrition by Overtime
 • Employee Performance and Promotion Analysis
+
+# Dashboard
+<img width="965" height="545" alt="hr dashboard(40)" src="https://github.com/user-attachments/assets/e59782e9-91ef-4bd0-be19-d0835060407d" />
+
 # Key Business Insights
 • Young employees have the highest attrition rate.
 • Employees working overtime are more likely to leave.
@@ -39,5 +43,3 @@ This project analyzes employee attrition and identifies the major factors contri
 • Create better career growth and promotion opportunities.
 • Improve compensation for low-salary employee groups.
 • Conduct targeted employee engagement programs.
-#Dashboard
-<img width="965" height="545" alt="hr dashboard(40)" src="https://github.com/user-attachments/assets/e59782e9-91ef-4bd0-be19-d0835060407d" />
