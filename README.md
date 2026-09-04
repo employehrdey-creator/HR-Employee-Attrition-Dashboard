@@ -24,10 +24,12 @@ from employee_attrition;
 select   count(*) as left_employee
 from     employee_attrition     
 where Attrition ="Yes";
+
 • 4 Active employees
 select   count(*) as left_employee
 from     employee_attrition     
 where Attrition ="No";
+
 • 5 Employee Atrrition Rate
 SELECT
     round(
@@ -35,11 +37,13 @@ SELECT
         / count(*),
         2
     ) as attrition_rate
-from   employee_attrition ;    
+from   employee_attrition ; 
+
 • 6 Employees by department
 select department,count(*) as department_employyes
 from employee_attrition 
 group by department;
+
 • 7 Attrition rate by department
 select department,count(*) as total_employees,
 sum(case when Attrition ="Yes" then 1 else 0 end) as left_employee,
@@ -47,6 +51,7 @@ round(sum(case when Attrition="Yes"then 1 else 0 end)*100/count(*),2) as attriti
 from employee_attrition 
 group by department
 order by  attrition_rate desc;
+
 • 8 Attrition Rate by job role
 select JobRole, count(*) as total_employes,
 sum(case when Attrition ="Yes" then 1 else 0 end) as left_employes,
@@ -54,6 +59,7 @@ round(Sum(case when attrition="Yes" then 1 else 0 end)*100/count(*),2) as attrit
 from  employee_attrition
 group by JobRole
 order by attrition_rate desc;
+
 • 9 Top 5 roles with highest attrition
 select Jobrole,count(*) as left__employees
 from employee_attrition
@@ -61,20 +67,24 @@ where Attrition="Yes"
 group by Jobrole
 order by left__employees  desc
 limit 5;
+
 • 10 Does overtime affect attrition?
 select Overtime,count(*) as left_employes,
 round(sum(case when Attrition="Yes" then 1 else 0 end)*100/count(*),2) as overtime_attrition_rate
 from employee_attrition
 group by overtime;
+
 • 11 Count gender employess 
 select gender,count(*) as Gender_count
 from employee_attrition
 group by  gender;
+
 • 12 gender attrition rate
 select gender,count(*) as left_employes,
 round(sum(case when Attrition="Yes" then 1 else 0 end)*100/count(*),2) as overtime_attrition_rate
 from employee_attrition
 group by gender;
+
 • 13 MonthlyIncome group
 SELECT
     CASE
@@ -90,6 +100,7 @@ GROUP BY
         WHEN MonthlyIncome > 7000 THEN 'Medium Salary'
         ELSE 'Low Salary'
     END;
+    
 • 14 Attrition rate by Salary group
 select
 case 
@@ -104,6 +115,7 @@ case
 when MonthlyIncome>12000 Then "High Salary"
 when MonthlyIncome>7000 then "Med salary"
 else "Low Salary" end;
+
 • 15 Attrition by job satisfaction
 select 
 case
@@ -121,22 +133,27 @@ when JobSatisfaction=3 then "Med Job satisfaction"
 when JobSatisfaction=2 then "Avg Job satisfaction"
 else "Bad Job satisfaction" end
 order by attrition_rate_by_jobrole desc;
+
 • 16 Top 10 highest paid employees
  select Department,Jobrole,Gender,MonthlyIncome
 from employee_attrition
 order by  MonthlyIncome desc
 limit 10;
+
 • 17 Find department wise Second-highest salary
 select Department,Jobrole,Gender,MonthlyIncome
-from (Select  Department,Jobrole,Gender,MonthlyIncome,rank() over(partition by Department order by MonthlyIncome desc) as rnk from employee_attrition)t
-where rnk=2;
+from (Select  Department,Jobrole,Gender,MonthlyIncome,rank() over(partition by Department order by MonthlyIncome desc) as rank from employee_attrition)t
+where rank=2;
+
 • 18 Rank employees by salary
 select Department,Jobrole,Gender,MonthlyIncome,TotalWorkingYears,rank() over (order by MonthlyIncome desc)as ranks
 from employee_attrition;
+
 • 19 Average performance rating by department
 select Department,round(avg(PerformanceRating),2) as Avg_rating
 from employee_attrition
 group by department;
+
 • 20 How many  employees earning above department average?
 select count(*) as total_employes
 from employee_attrition as e
@@ -144,6 +161,7 @@ where MonthlyIncome>(select avg(MonthlyIncome)
 from employee_attrition
 where department=e.department
 );
+
 • 21 Does work-life balance affect employee attrition?
 SELECT
     CASE
@@ -166,6 +184,7 @@ SELECT
 FROM employee_attrition
 GROUP BY WorkLifeBalance
 ORDER BY WorkLifeBalance;
+
 • 22 Does business travel affect employee attrition?
 SELECT
     BusinessTravel,
