@@ -19,20 +19,20 @@ FROM employee_attrition;
 
 • 2 Unique deparments-
 
-select distinct Department
-from employee_attrition;
+SELECT DISTINCT Department
+FROM employee_attrition;
 
 • 3 Employees who left-
 
-select   count(*) as left_employee
-from     employee_attrition     
-where Attrition ="Yes";
+SELECT COUNT(*) AS employees_left
+FROM employee_attrition
+WHERE Attrition = 'Yes';
 
 • 4 Active employees-
 
-select   count(*) as left_employee
-from     employee_attrition     
-where Attrition ="No";
+SELECT COUNT(*) AS active_employees
+FROM employee_attrition
+WHERE Attrition = 'No';
 
 • 5 Employee Atrrition Rate-
 
