@@ -12,7 +12,8 @@ This project analyzes employee attrition and identifies the major factors contri
 • Data Cleaning
 • Data Analysis
 # Sql
-• 1 Total employees
+• 1 # Total employees
+
 select count(*) as total_employees
 from    employee_attrition;  
 
