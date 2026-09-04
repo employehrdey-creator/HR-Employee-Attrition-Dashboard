@@ -36,29 +36,32 @@ WHERE Attrition = 'No';
 
 • 5 Employee Atrrition Rate-
 
-SELECT
-    round(
-        sum(case when Attrition = 'Yes' then 1 else 0 end) * 100.0
-        / count(*),
-        2
-    ) as attrition_rate
-from   employee_attrition ; 
+SELECT ROUND(
+    SUM(CASE WHEN Attrition = 'Yes' THEN 1 ELSE 0 END)
+    * 100.0 / COUNT(*), 2
+) AS attrition_rate
+FROM employee_attrition;
 
 • 6 Employees by department-
 
-select department,count(*) as department_employyes
-from employee_attrition 
-group by department;
+SELECT Department, COUNT(*) AS total_employees
+FROM employee_attrition
+GROUP BY Department;
 
 
 • 7 Attrition rate by department-
 
-select department,count(*) as total_employees,
-sum(case when Attrition ="Yes" then 1 else 0 end) as left_employee,
-round(sum(case when Attrition="Yes"then 1 else 0 end)*100/count(*),2) as attrition_rate
-from employee_attrition 
-group by department
-order by  attrition_rate desc;
+SELECT
+    Department,
+    COUNT(*) AS total_employees,
+    SUM(CASE WHEN Attrition = 'Yes' THEN 1 ELSE 0 END) AS employees_left,
+    ROUND(
+        SUM(CASE WHEN Attrition = 'Yes' THEN 1 ELSE 0 END)
+        * 100.0 / COUNT(*), 2
+    ) AS attrition_rate
+FROM employee_attrition
+GROUP BY Department
+ORDER BY attrition_rate DESC;
 
 • 8 Attrition Rate by job role-
 
