@@ -15,9 +15,11 @@ This project analyzes employee attrition and identifies the major factors contri
 • 1 Total employees
 select count(*) as total_employees
 from    employee_attrition;  
+
 • 2 Unique deparments;
 select distinct Department
 from employee_attrition;
+
 • 3 Employees who left
 select   count(*) as left_employee
 from     employee_attrition     
