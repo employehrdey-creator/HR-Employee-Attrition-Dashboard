@@ -14,8 +14,8 @@ This project analyzes employee attrition and identifies the major factors contri
 # Sql
 • 1  Total employees-
 
-select count(*) as total_employees
-from employee_attrition;
+SELECT COUNT(*) AS total_employees
+FROM employee_attrition;
 
 • 2 Unique deparments-
 
@@ -49,6 +49,7 @@ from   employee_attrition ;
 select department,count(*) as department_employyes
 from employee_attrition 
 group by department;
+
 
 • 7 Attrition rate by department-
 
