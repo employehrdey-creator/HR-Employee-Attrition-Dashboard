@@ -7,7 +7,6 @@ This project analyzes employee attrition and identifies the major factors contri
 https://github.com/employehrdey-creator/HR-Employee-Attrition-Dashboard/commit/e8402d566a09d562a8cc8a9fe3a3f6c0eddeb774
 
 # Tools Used
-• Sql
 • Power BI
 • Power Query
 • DAX
