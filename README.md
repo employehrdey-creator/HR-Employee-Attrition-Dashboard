@@ -3,6 +3,7 @@ I’m excited to share my latest Power BI project – HR Employee Attrition Anal
 # Project Overview
 
 This project analyzes employee attrition and identifies the major factors contributing to employees leaving the organization.
+https://github.com/employehrdey-creator/HR-Employee-Attrition-Dashboard/commit/e8402d566a09d562a8cc8a9fe3a3f6c0eddeb774
 
 # Tools Used
 • Sql
